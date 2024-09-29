@@ -1,0 +1,20 @@
+﻿@model Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Product Details";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+<p><strong>Price:</strong> $@Model.Price</p>
+
+@section reviews {
+    <h2>Reviews</h2>
+    <form method="post" action="/Product/AddReview">
+        <div class="form-group">
+            <label for="review">Your Review:</label>
+            <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
